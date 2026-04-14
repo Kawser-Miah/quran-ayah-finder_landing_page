@@ -724,6 +724,11 @@ p {
   max-width: 500px;
 }
 
+.hero-desc strong {
+  color: var(--primary-light);
+  white-space: nowrap;
+}
+
 .hero-badges {
   display: flex;
   gap: 10px;
