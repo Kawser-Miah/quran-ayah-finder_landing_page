@@ -1,0 +1,99 @@
+{
+  "app": {
+    "name": "Quran Ayah Finder",
+    "tagline": "Ask. Find. Reflect.",
+    "description": "Describe your problem, feeling, or verse number in any language — our AI finds the exact Quranic solution. 100% free, no ads.",
+    "rating": "4.8",
+    "downloads": "50K+",
+    "email": "support@quranayahfinder.com",
+    "playStoreUrl": "#",
+    "appStoreUrl": "#"
+  },
+  "stats": [
+    { "num": "114", "label": "Surahs" },
+    { "num": "6,236", "label": "Verses" },
+    { "num": "12+", "label": "Translations" },
+    { "num": "50K+", "label": "Downloads" }
+  ],
+  "features": [
+    { "icon": "🔍", "title": "AI Search", "desc": "Ask any question naturally in any language" },
+    { "icon": "📖", "title": "Complete Quran", "desc": "114 Surahs, 30 Juz with authentic Uthmani script" },
+    { "icon": "🤲", "title": "6 Dua Categories", "desc": "Forgiveness, Guidance, Protection, Patience, Family, Gratitude" },
+    { "icon": "📚", "title": "12+ Translations", "desc": "English, Bengali, Urdu, German, French, Indonesian & more" },
+    { "icon": "📝", "title": "Tafsir", "desc": "Ibn Kathir, Ahsanul Bayaan, Al Jalalayn, Al Waseet, As Saadis" },
+    { "icon": "🎙️", "title": "Reciters", "desc": "Al Afasy and Mishari ibn Rashid al-Afasy for sleep" },
+    { "icon": "🔖", "title": "Bookmarks", "desc": "Save and organize your favorite verses & Duas" },
+    { "icon": "📅", "title": "Daily Verse", "desc": "Verse of the Day with full Tafsir included" },
+    { "icon": "🔥", "title": "Streak Tracking", "desc": "Build daily Quran reading habits and track progress" },
+    { "icon": "📱", "title": "Mushaf Mode", "desc": "Traditional page-by-page Mushaf layout" },
+    { "icon": "🌓", "title": "Dark Mode", "desc": "Comfortable night reading with full dark theme" },
+    { "icon": "🌐", "title": "Localization", "desc": "6+ languages: English, বাংলা, Deutsch, français & more" }
+  ],
+  "topSearches": [
+    { "query": "Killing an innocent soul", "date": "02 April 2026", "rank": 1 },
+    { "query": "Quranic duas for Ramadan", "date": "16 March 2026", "rank": 2 },
+    { "query": "When the death comes", "date": "22 February 2026", "rank": 3 },
+    { "query": "What Allah said about ongoing charity?", "date": "19 February 2026", "rank": 4 },
+    { "query": "Verses about forgiveness and mercy", "date": "15 February 2026", "rank": 5 },
+    { "query": "How should I treat my parents?", "date": "14 February 2026", "rank": 6 }
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "I typed 'killing an innocent soul' and got An-Nisaa:93 and Al-Maida:32. The AI understands exactly what I'm looking for. This app is a true blessing.",
+      "name": "Muhammad R.",
+      "location": "Dhaka, Bangladesh",
+      "initials": "MR"
+    },
+    {
+      "stars": 5,
+      "text": "The streak feature keeps me coming back daily. 3 minutes a day has completely changed my relationship with the Quran. Alhamdulillah!",
+      "name": "Fatima K.",
+      "location": "London, UK",
+      "initials": "FK"
+    },
+    {
+      "stars": 5,
+      "text": "Finally an app with authentic Tafsirs and multiple translations. The Mushaf mode feels just like reading from a physical Quran. Highly recommended!",
+      "name": "Abdullah M.",
+      "location": "New York, USA",
+      "initials": "AM"
+    }
+  ],
+  "donation": {
+    "monthlyGoal": 500,
+    "raised": 200,
+    "currency": "$",
+    "amounts": [5, 10, 25],
+    "donateUrl": "#"
+  },
+  "footer": {
+    "appLinks": ["Features", "Quran", "Duas", "Bookmarks", "Settings"],
+    "resourceLinks": [
+      { "label": "FAQ", "url": "#" },
+      { "label": "Contact Us", "url": "#" },
+      { "label": "Privacy Policy", "url": "#" },
+      { "label": "Terms of Service", "url": "#" },
+      { "label": "Donate", "url": "#" }
+    ],
+    "languages": [
+      { "label": "English", "code": "en" },
+      { "label": "বাংলা", "code": "bn" },
+      { "label": "اردو", "code": "ur" },
+      { "label": "Türkçe", "code": "tr" }
+    ],
+    "social": [
+      { "label": "Facebook", "url": "#", "icon": "facebook" },
+      { "label": "Instagram", "url": "#", "icon": "instagram" },
+      { "label": "Twitter", "url": "#", "icon": "twitter" },
+      { "label": "YouTube", "url": "#", "icon": "youtube" }
+    ],
+    "copyright": "© 2025 Quran Ayah Finder. All rights reserved."
+  },
+  "seo": {
+    "title": "Quran Ayah Finder — AI-Powered Quranic Guidance App",
+    "description": "Find Quranic answers to any question in any language. AI-powered verse search, 12+ translations, authentic Tafsirs, Dua categories, streak tracking. 100% free, no ads.",
+    "keywords": "Quran app, Quran search, Islamic app, Quranic guidance, AI Quran, find verses, Duas, Tafsir, Muslim app",
+    "siteUrl": "https://quranayahfinder.com"
+  }
+}
