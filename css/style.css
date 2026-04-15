@@ -767,6 +767,15 @@ p {
   animation: float 5s ease-in-out infinite;
 }
 
+/* All other phones float on hover */
+.phone-mockup:not(.phone-animate) {
+  transition: transform 0.3s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.phone-mockup:not(.phone-animate):hover {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* =====================================================
    PHONE MOCKUP
    ===================================================== */
