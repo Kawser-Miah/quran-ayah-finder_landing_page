@@ -770,43 +770,84 @@ p {
 /* =====================================================
    PHONE MOCKUP
    ===================================================== */
+
+/* ---- Light mode frame: clean white/light-gray ---- */
+:root {
+  --phone-frame-bg:      #E9E9EB;
+  --phone-frame-outer:   #D1D1D6;
+  --phone-frame-inner:   rgba(255,255,255,0.90);
+  --phone-frame-shadow:
+    0 2px 4px rgba(0,0,0,0.08),
+    0 8px 24px rgba(0,0,0,0.12),
+    0 32px 64px rgba(0,0,0,0.10);
+  --phone-btn-color:      #C7C7CC;
+  --phone-btn-shadow:    rgba(0,0,0,0.15);
+  --phone-screen-bg:     #FFFFFF;
+  --phone-island-bg:     #C7C7CC;
+  --phone-border-outer:  rgba(0,0,0,0.14);
+  --phone-border-inner:  rgba(255,255,255,0.80);
+}
+
+/* ---- Dark mode frame: near-black ---- */
+[data-theme="dark"] {
+  --phone-frame-bg:      #1C1C1E;
+  --phone-frame-outer:   #0A0A0A;
+  --phone-frame-inner:   rgba(255,255,255,0.06);
+  --phone-frame-shadow:
+    0 2px 4px rgba(0,0,0,0.40),
+    0 8px 24px rgba(0,0,0,0.55),
+    0 32px 64px rgba(0,0,0,0.50);
+  --phone-btn-color:      #2C2C2E;
+  --phone-btn-shadow:    rgba(255,255,255,0.06);
+  --phone-screen-bg:     #000000;
+  --phone-island-bg:     #000000;
+  --phone-border-outer:  rgba(255,255,255,0.10);
+  --phone-border-inner:  rgba(255,255,255,0.05);
+}
+
 .phone-mockup {
   width: 270px;
   height: 555px;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 50%, #111 100%);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.45),
-    0 0 0 1px rgba(255,255,255,0.05),
-    inset 0 0 0 1px rgba(255,255,255,0.08);
-  padding: 3px;
+  border-radius: 52px;
+  background: var(--phone-frame-bg);
+  box-shadow: var(--phone-frame-shadow);
+  /* thick visible bezel = 12px padding */
+  padding: 12px;
   position: relative;
   flex-shrink: 0;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  /* crisp outer stroke */
+  outline: 1.5px solid var(--phone-border-outer);
+}
+
+/* inner glow line (separates frame from screen edge) */
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  inset: 11px;
+  border-radius: 42px;
+  border: 1px solid var(--phone-border-inner);
+  pointer-events: none;
+  z-index: 5;
 }
 
 .phone-screen {
   width: 100%;
   height: 100%;
-  border-radius: 47px;
+  border-radius: 41px;
   overflow: hidden;
   position: relative;
-  background: #000;
+  background: var(--phone-screen-bg);
+  transition: background 0.35s ease;
 }
 
+/* Dynamic island hidden — camera already inside screenshot */
 .phone-dynamic-island {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 32px;
-  background: #000;
-  border-radius: 20px;
-  z-index: 10;
+  display: none;
 }
 
 .phone-screen-content {
-  padding-top: 50px;
+  padding-top: 0;
   height: 100%;
   overflow: hidden;
 }
@@ -818,32 +859,56 @@ p {
   object-position: top;
 }
 
-/* Side buttons */
-.phone-btn-l1 { position: absolute; left: -3px; top: 100px; width: 3px; height: 30px; background: #3a3a3a; border-radius: 3px 0 0 3px; }
-.phone-btn-l2 { position: absolute; left: -3px; top: 140px; width: 3px; height: 45px; background: #3a3a3a; border-radius: 3px 0 0 3px; }
-.phone-btn-l3 { position: absolute; left: -3px; top: 195px; width: 3px; height: 45px; background: #3a3a3a; border-radius: 3px 0 0 3px; }
-.phone-btn-r1 { position: absolute; right: -3px; top: 140px; width: 3px; height: 65px; background: #3a3a3a; border-radius: 0 3px 3px 0; }
+/* Side buttons — match frame color exactly */
+.phone-btn-l1 {
+  position: absolute; left: -5px; top: 100px;
+  width: 5px; height: 28px;
+  background: var(--phone-btn-color);
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 2px var(--phone-btn-shadow);
+  transition: background 0.35s ease;
+}
+.phone-btn-l2 {
+  position: absolute; left: -5px; top: 138px;
+  width: 5px; height: 44px;
+  background: var(--phone-btn-color);
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 2px var(--phone-btn-shadow);
+  transition: background 0.35s ease;
+}
+.phone-btn-l3 {
+  position: absolute; left: -5px; top: 192px;
+  width: 5px; height: 44px;
+  background: var(--phone-btn-color);
+  border-radius: 3px 0 0 3px;
+  box-shadow: -1px 0 2px var(--phone-btn-shadow);
+  transition: background 0.35s ease;
+}
+.phone-btn-r1 {
+  position: absolute; right: -5px; top: 155px;
+  width: 5px; height: 64px;
+  background: var(--phone-btn-color);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 1px 0 2px var(--phone-btn-shadow);
+  transition: background 0.35s ease;
+}
 
 /* Phone sizes */
 .phone-mockup.phone-sm {
   width: 230px;
   height: 475px;
-  border-radius: 44px;
+  border-radius: 46px;
 }
-
-.phone-mockup.phone-sm .phone-screen {
-  border-radius: 41px;
-}
+.phone-mockup.phone-sm::before { inset: 11px; border-radius: 37px; }
+.phone-mockup.phone-sm .phone-screen { border-radius: 35px; }
 
 .phone-mockup.phone-lg {
   width: 300px;
   height: 615px;
-  border-radius: 56px;
+  border-radius: 58px;
 }
-
-.phone-mockup.phone-lg .phone-screen {
-  border-radius: 53px;
-}
+.phone-mockup.phone-lg::before { inset: 11px; border-radius: 48px; }
+.phone-mockup.phone-lg .phone-screen { border-radius: 46px; }
 
 /* =====================================================
    STATS BAR
@@ -1059,12 +1124,12 @@ p {
   gap: 80px;
 }
 
-.feature-split.reverse {
-  direction: rtl;
+.feature-split.reverse .feature-text {
+  order: 1;
 }
 
-.feature-split.reverse > * {
-  direction: ltr;
+.feature-split.reverse .feature-phone {
+  order: 2;
 }
 
 .feature-text h2 {
@@ -2131,8 +2196,9 @@ p {
     text-align: center;
   }
 
-  .feature-split.reverse {
-    direction: ltr;
+  .feature-split.reverse .feature-text,
+  .feature-split.reverse .feature-phone {
+    order: unset;
   }
 
   .feature-phone,
@@ -2277,11 +2343,12 @@ p {
   .two-phones .phone-mockup {
     width: 200px;
     height: 410px;
-    border-radius: 40px;
+    border-radius: 42px;
   }
 
+  .two-phones .phone-mockup::before { inset: 11px; border-radius: 32px; }
   .two-phones .phone-mockup .phone-screen {
-    border-radius: 37px;
+    border-radius: 31px;
   }
 
   .result-cards {
@@ -2310,11 +2377,12 @@ p {
   .phone-mockup {
     width: 230px;
     height: 475px;
-    border-radius: 44px;
+    border-radius: 46px;
   }
 
+  .phone-mockup::before { inset: 11px; border-radius: 37px; }
   .phone-mockup .phone-screen {
-    border-radius: 41px;
+    border-radius: 35px;
   }
 
   .features-grid {
