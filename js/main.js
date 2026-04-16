@@ -337,7 +337,7 @@ function renderQRCodes(app) {
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    // QRCode.js appends both <canvas> AND <img> — remove canvas to avoid duplicates
+    // QRCode.js appends both <canvas> AND <img> — remove canvas after img src is populated
     setTimeout(() => {
       const canvas = box.querySelector('canvas');
       if (canvas) canvas.remove();
@@ -347,7 +347,7 @@ function renderQRCodes(app) {
       logo.className = 'dl-qr-logo';
       logo.innerHTML = icon;
       box.appendChild(logo);
-    }, 50);
+    }, 300);
 
     const lbl = document.createElement('span');
     lbl.className = 'dl-qr-label';
