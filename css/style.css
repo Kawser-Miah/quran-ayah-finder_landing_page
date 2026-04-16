@@ -3609,6 +3609,29 @@ p {
   }
 }
 
+@media (max-width: 600px) {
+  .dl-qr-codes {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .dl-qr-box {
+    width: 180px;
+    height: 180px;
+  }
+
+  .dl-qr-box img {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .dl-qr-logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 @media (max-width: 480px) {
   .bismillah-text {
     font-size: 18px;
