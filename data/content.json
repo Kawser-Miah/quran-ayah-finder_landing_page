@@ -1,7 +1,9 @@
 {
   "app": {
-    "name": "Quran Ayah Finder",
+    "name": "Quran - Ayah Finder",
     "tagline": "Ask. Find. Reflect.",
+    "subtitle1": "World's Most Intelligent Ayah Finder app.",
+    "subtitle2": "Your AI-powered Quranic guide, free forever.",
     "description": "Describe your problem, feeling, or verse number in any language — our AI finds the exact Quranic solution. 100% free, no ads.",
     "rating": "4.9",
     "downloads": "50K+",
