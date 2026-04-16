@@ -3436,9 +3436,11 @@ p {
   position: relative;
 }
 
-/* QRCode.js renders both canvas + img — hide canvas, show only img */
+/* QRCode.js renders both canvas + img — keep canvas rendered (for toDataURL) but invisible */
 .dl-qr-box canvas {
-  display: none !important;
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
 }
 
 .dl-qr-box img {
