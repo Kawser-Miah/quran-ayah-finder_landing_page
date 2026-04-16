@@ -6,8 +6,8 @@
     "rating": "4.8",
     "downloads": "50K+",
     "email": "support@quranayahfinder.com",
-    "playStoreUrl": "#",
-    "appStoreUrl": "#"
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=xyz.brainbo.quranicsolution",
+    "appStoreUrl": "https://apps.apple.com/us/app/quran-ayah-finder/id6748535211"
   },
   "stats": [
     { "num": "114", "label": "Surahs" },
@@ -65,7 +65,7 @@
     "raised": 200,
     "currency": "$",
     "amounts": [5, 10, 25],
-    "donateUrl": "#"
+    "donateUrl": "https://ko-fi.com/quranayahfinder"
   },
   "footer": {
     "appLinks": ["Features", "Quran", "Duas", "Bookmarks", "Settings"],
