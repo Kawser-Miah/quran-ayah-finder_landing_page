@@ -21,11 +21,13 @@
     { "icon": "🤲", "title": "6 Dua Categories", "desc": "Forgiveness, Guidance, Protection, Patience, Family, Gratitude" },
     { "icon": "📚", "title": "12+ Translations", "desc": "English, Bengali, Urdu, German, French, Indonesian & more" },
     { "icon": "📝", "title": "Tafsir", "desc": "Ibn Kathir, Ahsanul Bayaan, Al Jalalayn, Al Waseet, As Saadis" },
-    { "icon": "🎙️", "title": "Reciters", "desc": "Al Afasy and Mishari ibn Rashid al-Afasy for sleep" },
-    { "icon": "🔖", "title": "Bookmarks", "desc": "Save and organize your favorite verses & Duas" },
-    { "icon": "📅", "title": "Daily Verse", "desc": "Verse of the Day with full Tafsir included" },
+    { "icon": "🔊", "title": "Audio Recitation", "desc": "Listen to any ayah with multiple reciters including Al Afasy" },
+    { "icon": "🎙️", "title": "Sleep Reciter", "desc": "Dedicated reciter for relaxation — Mishari ibn Rashid al-Afasy" },
+    { "icon": "🔖", "title": "Bookmarks", "desc": "Save and organize your favorite verses & Duas by collection" },
+    { "icon": "🕐", "title": "Search History", "desc": "Instantly revisit all your past Quranic searches" },
+    { "icon": "📅", "title": "Daily Verse", "desc": "A featured Quranic verse every day with Tafsir included" },
     { "icon": "🔥", "title": "Streak Tracking", "desc": "Build daily Quran reading habits and track progress" },
-    { "icon": "📱", "title": "Mushaf Mode", "desc": "Traditional page-by-page Mushaf layout" },
+    { "icon": "📱", "title": "Mushaf Mode", "desc": "Traditional page-by-page Mushaf layout (604 pages)" },
     { "icon": "🌓", "title": "Dark Mode", "desc": "Comfortable night reading with full dark theme" },
     { "icon": "🌐", "title": "Localization", "desc": "6+ languages: English, বাংলা, Deutsch, français & more" }
   ],
@@ -35,7 +37,8 @@
     { "query": "When the death comes", "date": "22 February 2026", "rank": 3 },
     { "query": "What Allah said about ongoing charity?", "date": "19 February 2026", "rank": 4 },
     { "query": "Verses about forgiveness and mercy", "date": "15 February 2026", "rank": 5 },
-    { "query": "How should I treat my parents?", "date": "14 February 2026", "rank": 6 }
+    { "query": "How should I treat my parents?", "date": "14 February 2026", "rank": 6 },
+    { "query": "Women's dignity in Islam", "date": "", "rank": 7 }
   ],
   "testimonials": [
     {
