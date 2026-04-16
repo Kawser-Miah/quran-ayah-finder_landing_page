@@ -3,7 +3,7 @@
     "name": "Quran Ayah Finder",
     "tagline": "Ask. Find. Reflect.",
     "description": "Describe your problem, feeling, or verse number in any language — our AI finds the exact Quranic solution. 100% free, no ads.",
-    "rating": "4.8",
+    "rating": "4.9",
     "downloads": "50K+",
     "email": "support@quranayahfinder.com",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=xyz.brainbo.quranicsolution",
@@ -74,7 +74,7 @@
       { "label": "Contact Us", "url": "#" },
       { "label": "Privacy Policy", "url": "#" },
       { "label": "Terms of Service", "url": "#" },
-      { "label": "Donate", "url": "#" }
+      { "label": "Donate", "url": "https://ko-fi.com/quranayahfinder" }
     ],
     "languages": [
       { "label": "English", "code": "en" },
@@ -86,7 +86,8 @@
       { "label": "Facebook", "url": "#", "icon": "facebook" },
       { "label": "Instagram", "url": "#", "icon": "instagram" },
       { "label": "Twitter", "url": "#", "icon": "twitter" },
-      { "label": "YouTube", "url": "#", "icon": "youtube" }
+      { "label": "YouTube", "url": "#", "icon": "youtube" },
+      { "label": "WhatsApp Channel", "url": "https://whatsapp.com/channel/0029VbC5EZOAu3aXq68i9230", "icon": "whatsapp" }
     ],
     "copyright": "© 2025 Quran Ayah Finder. All rights reserved."
   },
