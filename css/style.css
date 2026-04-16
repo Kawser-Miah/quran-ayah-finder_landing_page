@@ -3436,18 +3436,16 @@ p {
   position: relative;
 }
 
-/* QRCode.js renders both canvas + img — keep canvas rendered (for toDataURL) but invisible */
+/* Show canvas directly — QRCode.js skips img generation on modern Android */
 .dl-qr-box canvas {
-  visibility: hidden;
-  position: absolute;
-  pointer-events: none;
-}
-
-.dl-qr-box img {
   display: block !important;
   width: 128px !important;
   height: 128px !important;
   border-radius: 4px;
+}
+
+.dl-qr-box img {
+  display: none !important;
 }
 
 /* Centred store icon inside QR code */
@@ -3623,7 +3621,7 @@ p {
     height: 180px;
   }
 
-  .dl-qr-box img {
+  .dl-qr-box canvas {
     width: 160px !important;
     height: 160px !important;
   }
