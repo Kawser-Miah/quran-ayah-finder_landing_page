@@ -337,17 +337,18 @@ function renderQRCodes(app) {
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    // QRCode.js appends both <canvas> AND <img> — remove canvas after img src is populated
+    // QRCode.js skips img generation on modern Android (version regex only matches 1-digit versions)
+    // Remove the img fallback and show the canvas directly instead
     setTimeout(() => {
-      const canvas = box.querySelector('canvas');
-      if (canvas) canvas.remove();
+      const img = box.querySelector('img');
+      if (img) img.remove();
 
       // Centred store icon overlay
       const logo = document.createElement('div');
       logo.className = 'dl-qr-logo';
       logo.innerHTML = icon;
       box.appendChild(logo);
-    }, 300);
+    }, 100);
 
     const lbl = document.createElement('span');
     lbl.className = 'dl-qr-label';
