@@ -300,6 +300,20 @@ function renderAppInfo(app) {
       el.textContent = app.downloads;
     });
   }
+  if (app.name) {
+    const navName = document.getElementById('nav-app-name');
+    if (navName) {
+      navName.innerHTML = app.name + (app.subtitle1 ? ` <span class="nav-logo-sub">${app.subtitle1}</span>` : '');
+    }
+    const footerName = document.getElementById('footer-app-name');
+    if (footerName) footerName.textContent = app.name;
+  }
+  if (app.tagline || app.subtitle2) {
+    const subtitleEl = document.getElementById('footer-app-subtitle');
+    if (subtitleEl) {
+      subtitleEl.innerHTML = (app.tagline ? app.tagline + '<br>' : '') + (app.subtitle2 || '');
+    }
+  }
 }
 
 // =====================================================
