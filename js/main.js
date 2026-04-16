@@ -286,15 +286,80 @@ function renderTestimonials(testimonials) {
 }
 
 // =====================================================
+// RENDER: QR CODES  (from content.json store URLs)
+// =====================================================
+function renderQRCodes(app) {
+  const container = document.getElementById('dl-qr-codes');
+  if (!container || typeof QRCode === 'undefined') return;
+
+  const playIconSvg = '<svg viewBox="0 0 512 512" fill="#0D5C46" xmlns="http://www.w3.org/2000/svg"><path d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256 55.37 56.42A4.33 4.33 0 0 0 48 59.49zM345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06L285.19 231.93zM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-57.95zM449.38 231l-71.65-39.46L310.36 256l67.37 64.43L449.38 281c19.49-10.77 19.49-39.23 0-50z"/></svg>';
+  const appleIconSvg = '<svg viewBox="0 0 24 24" fill="#0D5C46" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>';
+
+  const stores = [
+    { url: app.playStoreUrl, label: 'Google Play', icon: playIconSvg },
+    { url: app.appStoreUrl,  label: 'App Store',   icon: appleIconSvg }
+  ].filter(s => s.url && s.url !== '#');
+
+  if (!stores.length) return;
+  container.innerHTML = '';
+
+  stores.forEach(({ url, label, icon }) => {
+    const item = document.createElement('div');
+    item.className = 'dl-qr-item';
+
+    const box = document.createElement('div');
+    box.className = 'dl-qr-box';
+
+    // H-level error correction so the center logo doesn't break scanning
+    new QRCode(box, {
+      text: url,
+      width: 128,
+      height: 128,
+      colorDark:  '#0D5C46',
+      colorLight: '#FFFFFF',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // QRCode.js appends both <canvas> AND <img> — remove canvas to avoid duplicates
+    setTimeout(() => {
+      const canvas = box.querySelector('canvas');
+      if (canvas) canvas.remove();
+
+      // Centred store icon overlay
+      const logo = document.createElement('div');
+      logo.className = 'dl-qr-logo';
+      logo.innerHTML = icon;
+      box.appendChild(logo);
+    }, 50);
+
+    const lbl = document.createElement('span');
+    lbl.className = 'dl-qr-label';
+    lbl.textContent = label;
+
+    item.appendChild(box);
+    item.appendChild(lbl);
+    container.appendChild(item);
+  });
+}
+
+// =====================================================
 // RENDER: DOWNLOAD LINKS  (from content.json)
 // =====================================================
 function renderDownloadLinks(app) {
   if (!app) return;
   document.querySelectorAll('[data-play-store]').forEach(el => {
     el.href = app.playStoreUrl || '#';
+    if (app.playStoreUrl && app.playStoreUrl !== '#') {
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    }
   });
   document.querySelectorAll('[data-app-store]').forEach(el => {
     el.href = app.appStoreUrl || '#';
+    if (app.appStoreUrl && app.appStoreUrl !== '#') {
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    }
   });
 }
 
@@ -399,6 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTestimonials(data.testimonials);
       renderDonationAmounts(data.donation);
       renderDownloadLinks(data.app);
+      renderQRCodes(data.app);
       renderFooter(data.footer);
 
       // Setup all interactions (must come after dynamic render)
@@ -414,6 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setupActiveNavOnScroll();
       setFooterYear();
 
+      setupWhatsAppStrip();
       // Re-run observers after dynamic content is in the DOM
       setTimeout(() => { setupScrollReveal(); setupCountUp(); }, 100);
     })
@@ -433,5 +500,39 @@ document.addEventListener('DOMContentLoaded', () => {
       setupLanguageButtons();
       setupActiveNavOnScroll();
       setFooterYear();
+      setupWhatsAppStrip();
+      // Fallback: use hardcoded URLs from content.json
+      renderQRCodes({
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=xyz.brainbo.quranicsolution',
+        appStoreUrl:  'https://apps.apple.com/us/app/quran-ayah-finder/id6748535211'
+      });
     });
-});
+})();
+
+// =====================================================
+// WHATSAPP CHANNEL STRIP DISMISS
+// =====================================================
+function setupWhatsAppStrip() {
+  const strip = document.getElementById('wa-strip');
+  const closeBtn = document.getElementById('wa-strip-close');
+  if (!strip || !closeBtn) return;
+
+  // Hide if already dismissed this session
+  if (sessionStorage.getItem('wa-strip-dismissed')) {
+    strip.remove();
+    return;
+  }
+
+  closeBtn.addEventListener('click', () => {
+    strip.style.transition = 'max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease';
+    strip.style.maxHeight = strip.offsetHeight + 'px';
+    strip.style.overflow = 'hidden';
+    requestAnimationFrame(() => {
+      strip.style.maxHeight = '0';
+      strip.style.opacity = '0';
+      strip.style.padding = '0';
+    });
+    setTimeout(() => strip.remove(), 380);
+    sessionStorage.setItem('wa-strip-dismissed', '1');
+  });
+}
