@@ -6,32 +6,31 @@
     "subtitle2": "Your AI-powered Quranic guide, free forever.",
     "description": "Describe your problem, feeling, or verse number in any language — our AI finds the exact Quranic solution. 100% free, no ads.",
     "rating": "4.9",
-    "downloads": "50K+",
+    "downloads": "",
     "email": "support@quranayahfinder.com",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=xyz.brainbo.quranicsolution",
     "appStoreUrl": "https://apps.apple.com/us/app/quran-ayah-finder/id6748535211"
   },
   "stats": [
-    { "num": "114", "label": "Surahs" },
-    { "num": "6,236", "label": "Verses" },
-    { "num": "12+", "label": "Translations" },
-    { "num": "50K+", "label": "Downloads" }
+    { "num": "15", "label": "Translations" },
+    { "num": "8", "label": "Tafsirs" },
+    { "num": "6", "label": "Languages" },
+    { "num": "5", "label": "Arabic Fonts" }
   ],
   "features": [
-    { "icon": "🔍", "title": "AI Search", "desc": "Ask any question naturally in any language" },
+    { "icon": "🔍", "title": "Ayah Search Tools", "desc": "World's most intelligent ayah finder app" },
     { "icon": "📖", "title": "Complete Quran", "desc": "114 Surahs, 30 Juz with authentic Uthmani script" },
-    { "icon": "🤲", "title": "6 Dua Categories", "desc": "Forgiveness, Guidance, Protection, Patience, Family, Gratitude" },
-    { "icon": "📚", "title": "12+ Translations", "desc": "English, Bengali, Urdu, German, French, Indonesian & more" },
-    { "icon": "📝", "title": "Tafsir", "desc": "Ibn Kathir, Ahsanul Bayaan, Al Jalalayn, Al Waseet, As Saadis" },
+    { "icon": "🤲", "title": "6 Quranic Dua Categories", "desc": "Forgiveness, Guidance, Protection, Patience, Family, Gratitude" },
+    { "icon": "📚", "title": "15 Translations", "desc": "English, Bengali, Urdu, German, French, Indonesian, Turkish, Russian, Spanish, Persian & more" },
+    { "icon": "📝", "title": "8 Tafsirs", "desc": "Ibn Kathir, Ahsanul Bayaan, Al Jalalayn, Al Waseet, As Saadi, Al Tabari, Maariful Quran, Al Qurtubi" },
     { "icon": "🔊", "title": "Audio Recitation", "desc": "Listen to any ayah with multiple reciters including Al Afasy" },
-    { "icon": "🎙️", "title": "Sleep Reciter", "desc": "Dedicated reciter for relaxation — Mishari ibn Rashid al-Afasy" },
     { "icon": "🔖", "title": "Bookmarks", "desc": "Save and organize your favorite verses & Duas by collection" },
     { "icon": "🕐", "title": "Search History", "desc": "Instantly revisit all your past Quranic searches" },
     { "icon": "📅", "title": "Daily Verse", "desc": "A featured Quranic verse every day with Tafsir included" },
     { "icon": "🔥", "title": "Streak Tracking", "desc": "Build daily Quran reading habits and track progress" },
     { "icon": "📱", "title": "Mushaf Mode", "desc": "Traditional page-by-page Mushaf layout (604 pages)" },
     { "icon": "🌓", "title": "Dark Mode", "desc": "Comfortable night reading with full dark theme" },
-    { "icon": "🌐", "title": "Localization", "desc": "6+ languages: English, বাংলা, Deutsch, français & more" }
+    { "icon": "🌐", "title": "Localization", "desc": "6 languages: English, বাংলা, Deutsch, français, Türkçe, Indonesian" }
   ],
   "topSearches": [
     { "query": "Killing an innocent soul", "date": "02 April 2026", "rank": 1 },
@@ -98,7 +97,7 @@
   },
   "seo": {
     "title": "Quran Ayah Finder — AI-Powered Quranic Guidance App",
-    "description": "Find Quranic answers to any question in any language. AI-powered verse search, 12+ translations, authentic Tafsirs, Dua categories, streak tracking. 100% free, no ads.",
+    "description": "Find Quranic answers to any question in any language. AI-powered verse search, 15 translations, 8 Tafsirs, 6 languages, 5 Arabic fonts. 100% free, no ads.",
     "keywords": "Quran app, Quran search, Islamic app, Quranic guidance, AI Quran, find verses, Duas, Tafsir, Muslim app",
     "siteUrl": "https://quranayahfinder.com"
   }
