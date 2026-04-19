@@ -875,20 +875,21 @@ p {
   border-radius: 52px;
   background: var(--phone-frame-bg);
   box-shadow: var(--phone-frame-shadow);
-  /* thick visible bezel = 12px padding */
-  padding: 12px;
+  /* reduced bezel = 7px padding */
+  padding: 7px;
   position: relative;
   flex-shrink: 0;
   transition: background 0.35s ease, box-shadow 0.35s ease;
   /* crisp outer stroke */
   outline: 1.5px solid var(--phone-border-outer);
+  will-change: transform;
 }
 
 /* inner glow line (separates frame from screen edge) */
 .phone-mockup::before {
   content: '';
   position: absolute;
-  inset: 11px;
+  inset: 6px;
   border-radius: 42px;
   border: 1px solid var(--phone-border-inner);
   pointer-events: none;
@@ -903,6 +904,8 @@ p {
   position: relative;
   background: var(--phone-screen-bg);
   transition: background 0.35s ease;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
 }
 
 /* Dynamic island hidden — camera already inside screenshot */
@@ -918,9 +921,8 @@ p {
 
 .phone-screen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
+  display: block;
 }
 
 /* Side buttons — match frame color exactly */
@@ -2414,7 +2416,7 @@ p {
     border-radius: 42px;
   }
 
-  .two-phones .phone-mockup::before { inset: 11px; border-radius: 32px; }
+  .two-phones .phone-mockup::before { inset: 6px; border-radius: 32px; }
   .two-phones .phone-mockup .phone-screen {
     border-radius: 31px;
   }
@@ -2448,7 +2450,7 @@ p {
     border-radius: 46px;
   }
 
-  .phone-mockup::before { inset: 11px; border-radius: 37px; }
+  .phone-mockup::before { inset: 6px; border-radius: 37px; }
   .phone-mockup .phone-screen {
     border-radius: 35px;
   }
