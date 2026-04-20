@@ -130,12 +130,13 @@ function animateCountUp(el) {
   const duration  = 1800;
   const startTime = performance.now();
 
-  (function update(now) {
+  function update(now) {
     const eased  = 1 - Math.pow(1 - Math.min((now - startTime) / duration, 1), 3);
     const current = Math.round(eased * target);
     el.textContent = (current >= 1000 ? current.toLocaleString() : current) + (hasPlus ? '+' : '');
     if (eased < 1) requestAnimationFrame(update);
-  })(startTime);
+  }
+  requestAnimationFrame(update);
 }
 
 function setupCountUp() {
@@ -342,12 +343,13 @@ function renderQRCodes(app) {
     box.className = 'dl-qr-box';
 
     // H-level error correction so the center logo doesn't break scanning
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     new QRCode(box, {
       text: url,
       width: 128,
       height: 128,
-      colorDark:  '#0D5C46',
-      colorLight: '#FFFFFF',
+      colorDark:  isDark ? '#1A6B55' : '#0D5C46',
+      colorLight: isDark ? '#1A2828' : '#FFFFFF',
       correctLevel: QRCode.CorrectLevel.H
     });
 
@@ -521,8 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setFooterYear();
 
       setupWhatsAppStrip();
-      // Re-run observers after dynamic content is in the DOM
-      setTimeout(() => { setupScrollReveal(); setupCountUp(); }, 100);
     })
     .catch(err => {
       console.error('[Quran Ayah Finder]', err.message);
