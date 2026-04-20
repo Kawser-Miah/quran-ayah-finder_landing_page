@@ -522,17 +522,16 @@ p {
 .nav-logo-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.nav-logo-icon svg {
-  width: 20px;
-  height: 20px;
+.nav-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .nav-logo-text {
@@ -889,8 +888,8 @@ p {
 .phone-mockup::before {
   content: '';
   position: absolute;
-  inset: 6px;
-  border-radius: 42px;
+  inset: 7px;
+  border-radius: 38px;
   border: 1px solid var(--phone-border-inner);
   pointer-events: none;
   z-index: 5;
@@ -899,7 +898,7 @@ p {
 .phone-screen {
   width: 100%;
   height: 100%;
-  border-radius: 41px;
+  border-radius: 38px;
   overflow: hidden;
   position: relative;
   background: var(--phone-screen-bg);
@@ -965,16 +964,16 @@ p {
   height: 475px;
   border-radius: 46px;
 }
-.phone-mockup.phone-sm::before { inset: 11px; border-radius: 37px; }
-.phone-mockup.phone-sm .phone-screen { border-radius: 35px; }
+.phone-mockup.phone-sm::before { inset: 7px; border-radius: 32px; }
+.phone-mockup.phone-sm .phone-screen { border-radius: 32px; }
 
 .phone-mockup.phone-lg {
   width: 300px;
   height: 615px;
   border-radius: 58px;
 }
-.phone-mockup.phone-lg::before { inset: 11px; border-radius: 48px; }
-.phone-mockup.phone-lg .phone-screen { border-radius: 46px; }
+.phone-mockup.phone-lg::before { inset: 7px; border-radius: 44px; }
+.phone-mockup.phone-lg .phone-screen { border-radius: 44px; }
 
 /* =====================================================
    STATS BAR
@@ -2041,6 +2040,7 @@ p {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 48px;
+  padding-top: 40px;
   padding-bottom: 56px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -2060,16 +2060,8 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.footer-logo-icon svg {
-  width: 20px;
-  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .footer-logo-text {
@@ -2113,6 +2105,12 @@ p {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
+}
+
+.social-btn[href="#"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .footer-col h5 {
@@ -2368,16 +2366,6 @@ p {
   .stat-item {
     border-right: none;
     border-bottom: 1px solid rgba(255,255,255,0.15);
-  }
-
-  .stat-item:nth-child(2n) {
-    border-right: none;
-  }
-
-  .stat-item:nth-child(1),
-  .stat-item:nth-child(2) {
-    border-right: 1px solid rgba(255,255,255,0.15);
-    border-right: none;
   }
 
   .stat-item:nth-child(odd) {
@@ -3139,10 +3127,6 @@ p {
   line-height: 1.25;
 }
 
-.searches-right {
-  /* inherits .search-list layout below */
-}
-
 .searches-stats {
   display: flex;
   gap: 16px;
@@ -3637,6 +3621,10 @@ p {
 }
 
 @media (max-width: 480px) {
+  .hero h1 {
+    white-space: normal;
+  }
+
   .bismillah-text {
     font-size: 18px;
   }
