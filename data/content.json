@@ -2,7 +2,7 @@
   "app": {
     "name": "Quran - Ayah Finder",
     "tagline": "Ask. Find. Reflect.",
-    "subtitle1": "World's Most Intelligent Ayah Finder app.",
+    "subtitle1": "World's Most Intelligent Ayah Finder App.",
     "subtitle2": "Your AI-powered Quranic guide, free forever.",
     "description": "Describe your problem, feeling, or verse number in any language — our AI finds the exact Quranic solution. 100% free, no ads.",
     "rating": "4.9",
@@ -39,7 +39,7 @@
     { "query": "What Allah said about ongoing charity?", "date": "19 February 2026", "rank": 4 },
     { "query": "Verses about forgiveness and mercy", "date": "15 February 2026", "rank": 5 },
     { "query": "How should I treat my parents?", "date": "14 February 2026", "rank": 6 },
-    { "query": "Women's dignity in Islam", "date": "", "rank": 7 }
+    { "query": "Women's dignity in Islam", "date": "10 January 2026", "rank": 7 }
   ],
   "testimonials": [
     {
